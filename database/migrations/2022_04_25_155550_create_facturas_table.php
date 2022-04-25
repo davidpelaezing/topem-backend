@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetallesTable extends Migration
+class CreateFacturasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDetallesTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalles', function (Blueprint $table) {
+        Schema::create('facturas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->string('cliente_nombre', 255);
@@ -32,6 +32,6 @@ class CreateDetallesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalles');
+        Schema::dropIfExists('facturas');
     }
 }
