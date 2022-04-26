@@ -16,15 +16,12 @@ class DetalleController extends Controller
      */
     public static function guardar($detalle, $factura_id){
         
-        /** Convertirmos el array en objeto */
-        $ObjDetalle = json_decode($detalle);
-
-        $nuevo_detalle = new Detalle();
+        $nuevo_detalle = new Detalle;
         $nuevo_detalle->factura_id = $factura_id;
-        $nuevo_detalle->descripcion = $ObjDetalle->descripcion;
-        $nuevo_detalle->valor_unitario = $ObjDetalle->valor_unitario;
-        $nuevo_detalle->cantidad = $ObjDetalle->cantidad;
-        $nuevo_detalle->total = $ObjDetalle->total;
+        $nuevo_detalle->descripcion = $detalle->descripcion;
+        $nuevo_detalle->valor_unitario = $detalle->valor_unitario;
+        $nuevo_detalle->cantidad = $detalle->cantidad;
+        $nuevo_detalle->total = $detalle->valor_unitario * $detalle->cantidad;
         
         return $nuevo_detalle->save();
 

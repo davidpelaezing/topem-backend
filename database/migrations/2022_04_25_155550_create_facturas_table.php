@@ -15,7 +15,7 @@ class CreateFacturasTable extends Migration
     {
         Schema::create('facturas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('vendedor_id')->constrained('users');
             $table->string('cliente_nombre', 255);
             $table->string('cliente_nit', 255);
             $table->float('valor_sin_iva', 10, 2);

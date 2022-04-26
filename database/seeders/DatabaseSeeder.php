@@ -18,12 +18,14 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'topem colombia',
             'email' => 'topem@correo.com',
+            'nit' => '111555999',
             'password' => Hash::make('password')
         ]);
 
         User::create([
             'name' => 'david pelaez',
             'email' => 'david@correo.com',
+            'nit' => '222333444',
             'password' => Hash::make('password')
         ]);
     }
